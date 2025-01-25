@@ -84,7 +84,7 @@ body {
   opacity: 0;
   display: block;
   animation-name: slideIn;
-  animation-duration: 0.75s;
+  animation-duration: 1.5s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
 }/*# sourceMappingURL=style.css.map */
