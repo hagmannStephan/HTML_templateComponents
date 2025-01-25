@@ -45,7 +45,11 @@ body {
   background-color: #f7e9d9;
 }
 
-#pageTitle {
+#page1-coverLetter {
+  height: 100%;
+  width: 100%;
+}
+#page1-coverLetter #pageTitle {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -53,10 +57,10 @@ body {
   width: -moz-fit-content;
   width: fit-content;
 }
-#pageTitle .block1 {
+#page1-coverLetter #pageTitle .block1 {
   /* Start fast -> end slow */
 }
-#pageTitle .block1 span {
+#page1-coverLetter #pageTitle .block1 span {
   font-family: "SourGummy";
   font-size: 5rem;
   opacity: 0;
@@ -65,41 +69,41 @@ body {
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
-#pageTitle .block1 .letter1 {
+#page1-coverLetter #pageTitle .block1 .letter1 {
   animation-delay: 0.3s;
 }
-#pageTitle .block1 .letter2 {
+#page1-coverLetter #pageTitle .block1 .letter2 {
   animation-delay: 0.325s;
 }
-#pageTitle .block1 .letter3 {
+#page1-coverLetter #pageTitle .block1 .letter3 {
   animation-delay: 0.375s;
 }
-#pageTitle .block1 .letter4 {
+#page1-coverLetter #pageTitle .block1 .letter4 {
   animation-delay: 0.45s;
 }
-#pageTitle .block1 .letter5 {
+#page1-coverLetter #pageTitle .block1 .letter5 {
   animation-delay: 0.55s;
 }
-#pageTitle .block1 .letter6 {
+#page1-coverLetter #pageTitle .block1 .letter6 {
   animation-delay: 0.65s;
 }
-#pageTitle .block1 .letter7 {
+#page1-coverLetter #pageTitle .block1 .letter7 {
   animation-delay: 0.75s;
 }
-#pageTitle .block1 .letter8 {
+#page1-coverLetter #pageTitle .block1 .letter8 {
   animation-delay: 0.85s;
 }
-#pageTitle .block1 .letter9 {
+#page1-coverLetter #pageTitle .block1 .letter9 {
   animation-delay: 0.95s;
 }
-#pageTitle .block2 {
+#page1-coverLetter #pageTitle .block2 {
   font-family: "SourGummy";
   font-size: 2rem;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-#pageTitle .block2 span {
+#page1-coverLetter #pageTitle .block2 span {
   position: fixed;
   top: 110%;
   opacity: 0;
@@ -109,13 +113,12 @@ body {
   animation-delay: 1s;
   animation-fill-mode: forwards;
 }
-
-#ivy1 {
+#page1-coverLetter #ivy1 {
   position: fixed;
   top: -100%;
   right: 10%;
   transform: rotate(30deg);
-  height: 25rem;
+  height: 60%;
   width: auto;
   z-index: -1;
   animation-name: dropIn;
@@ -124,13 +127,12 @@ body {
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
 }
-
-#flower1 {
+#page1-coverLetter #flower1 {
   position: fixed;
   bottom: 10%;
   left: -100%;
   transform: rotate(15deg) rotateY(180deg);
-  height: 17.5rem;
+  height: 50%;
   width: auto;
   z-index: -1;
   animation-name: slideInFromLeft;
@@ -145,7 +147,22 @@ body {
   pointer-events: none;
   transition: transform 0.1s ease;
   z-index: 9999;
-  height: 3rem;
+  height: 5rem;
   width: auto;
   top: -100%; /* Should not be visible until cursor gets moved */
+}
+
+#cursorTrail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.trail-point {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: #f9c728;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }/*# sourceMappingURL=style.css.map */

@@ -47,87 +47,93 @@ html {
 }
 
 body {
-    background-color: #f7e9d9;}
+    background-color: #f7e9d9;
+}
 
-#pageTitle {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: fit-content;
+#page1-coverLetter {
+    height: 100%;
+    width: 100%;
 
-    .block1 {
-        span {
+    #pageTitle {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+
+        .block1 {
+            span {
+                font-family: 'SourGummy';
+                font-size: 5rem;
+                opacity: 0;
+                animation-name: fadeIn;
+                animation-duration: 1.5s;
+                animation-timing-function: ease-out;
+                animation-fill-mode: forwards;
+            }
+
+            /* Start fast -> end slow */
+            .letter1 { animation-delay: 0.3s; }
+            .letter2 { animation-delay: 0.325s; }   // 0.025s
+            .letter3 { animation-delay: 0.375s; }   // 0.05s
+            .letter4 { animation-delay: 0.45s; }    // 0.075s
+            .letter5 { animation-delay: 0.55s; }   // 0.1s
+            .letter6 { animation-delay: 0.65s; }    // 0.1s
+            .letter7 { animation-delay: 0.75s; }   // 0.1s
+            .letter8 { animation-delay: 0.85s; }    // 0.1s
+            .letter9 { animation-delay: 0.95s; }    // 0.1s
+
+        }
+
+        .block2 {
             font-family: 'SourGummy';
-            font-size: 5rem;
-            opacity: 0;
-            animation-name: fadeIn;
-            animation-duration: 1.5s;
-            animation-timing-function: ease-out;
-            animation-fill-mode: forwards;
-        }
+            font-size: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
 
-        /* Start fast -> end slow */
-        .letter1 { animation-delay: 0.3s; }
-        .letter2 { animation-delay: 0.325s; }   // 0.025s
-        .letter3 { animation-delay: 0.375s; }   // 0.05s
-        .letter4 { animation-delay: 0.45s; }    // 0.075s
-        .letter5 { animation-delay: 0.55s; }   // 0.1s
-        .letter6 { animation-delay: 0.65s; }    // 0.1s
-        .letter7 { animation-delay: 0.75s; }   // 0.1s
-        .letter8 { animation-delay: 0.85s; }    // 0.1s
-        .letter9 { animation-delay: 0.95s; }    // 0.1s
-
-    }
-
-    .block2 {
-        font-family: 'SourGummy';
-        font-size: 2rem;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-        span {
-            position: fixed;
-            top: 110%;
-            opacity: 0;
-            display: block;
-            animation-name: dropAndFadeIn;
-            animation-duration: 1.5s;
-            animation-delay: 1s;
-            animation-fill-mode: forwards;
+            span {
+                position: fixed;
+                top: 110%;
+                opacity: 0;
+                display: block;
+                animation-name: dropAndFadeIn;
+                animation-duration: 1.5s;
+                animation-delay: 1s;
+                animation-fill-mode: forwards;
+            }
         }
     }
-}
 
-#ivy1 {
-    position: fixed;
-    top: -100%;
-    right: 10%;
-    transform: rotate(30deg);
-    height: 25rem;
-    width: auto;
-    z-index: -1;
-    animation-name: dropIn;
-    animation-duration: 1.5s;
-    animation-delay: 0.75s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-}
+    #ivy1 {
+        position: fixed;
+        top: -100%;
+        right: 10%;
+        transform: rotate(30deg);
+        height: 60%;
+        width: auto;
+        z-index: -1;
+        animation-name: dropIn;
+        animation-duration: 1.5s;
+        animation-delay: 0.75s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
 
-#flower1 {
-    position: fixed;
-    bottom: 10%;
-    left: -100%;
-    transform: rotate(15deg) rotateY(180deg);
-    height: 17.5rem;
-    width: auto;
-    z-index: -1;
-    animation-name: slideInFromLeft;
-    animation-duration: 1.75s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
+    #flower1 {
+        position: fixed;
+        bottom: 10%;
+        left: -100%;
+        transform: rotate(15deg) rotateY(180deg);
+        height: 50%;
+        width: auto;
+        z-index: -1;
+        animation-name: slideInFromLeft;
+        animation-duration: 1.75s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
 }
 
 #beeCursorTracker {
@@ -135,7 +141,22 @@ body {
     pointer-events: none;
     transition: transform 0.1s ease;
     z-index: 9999;
-    height: 3rem;
+    height: 5rem;
     width: auto;
     top: -100%; /* Should not be visible until cursor gets moved */
+}
+
+#cursorTrail {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.trail-point {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: #f9c728;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
