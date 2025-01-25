@@ -22,11 +22,38 @@
         <div class="block2">
             <span>Portfolio-Webpage</span>
         </div>
+    </div>
         <!--
             To-Do's und weitere Idden:
             - Goldener Rahmen um den Rand der Webseite (wie bei altem Spiegel)
             - Pflanzen, die sich bewegen (z.B. Rosen, Efeu, Blumen, ...)
             - Animationen upspicen
         -->
+    <img src="images/ivy-1258311_1280.webp" aria-hidden="true" alt="Ivy" id="ivy1">
+    <img src="images/flower-7092794_1280.webp" aria-hidden="true" alt="Flower" id="flower1">
+
+    <img src="images/bee-9339608.webp" aria-hidden="true" alt="Bee that tracks the coursor" id="beeCursorTracker">
+    <script>
+    let lastClientX = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+        const image = document.getElementById('beeCursorTracker');
+        
+        const offsetX = -15;
+        const offsetY = -15;
+        
+        image.style.left = `${e.clientX + offsetX}px`;
+        image.style.top = `${e.clientY + offsetY}px`;
+
+        // Determine rotation based on cursor movement direction
+        if (e.clientX < lastClientX) {
+            image.style.transform = 'scaleX(-1)';
+        } else if (e.clientX > lastClientX) {
+            image.style.transform = 'scaleX(1)';
+        }
+
+        lastClientX = e.clientX;
+    });
+    </script>
 </body>
 </html>

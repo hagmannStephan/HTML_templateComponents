@@ -12,7 +12,7 @@
     opacity: 1;
   }
 }
-@keyframes slideIn {
+@keyframes dropAndFadeIn {
   0% {
     top: 110%;
   }
@@ -21,12 +21,32 @@
     opacity: 1;
   }
 }
+@keyframes dropIn {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: -20%;
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    left: -10%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+html {
+  cursor: none;
+}
+
 body {
-  background-color: #fcf5f1;
+  background-color: #f7e9d9;
 }
 
 #pageTitle {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -39,9 +59,10 @@ body {
 #pageTitle .block1 span {
   font-family: "SourGummy";
   font-size: 5rem;
-  animation-name: fadeIn;
-  animation-duration: 1s;
   opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
 #pageTitle .block1 .letter1 {
@@ -79,12 +100,52 @@ body {
   justify-content: center;
 }
 #pageTitle .block2 span {
-  position: absolute;
+  position: fixed;
   top: 110%;
   opacity: 0;
   display: block;
-  animation-name: slideIn;
+  animation-name: dropAndFadeIn;
   animation-duration: 1.5s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
+}
+
+#ivy1 {
+  position: fixed;
+  top: -100%;
+  right: 10%;
+  transform: rotate(30deg);
+  height: 25rem;
+  width: auto;
+  z-index: -1;
+  animation-name: dropIn;
+  animation-duration: 1.5s;
+  animation-delay: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+#flower1 {
+  position: fixed;
+  bottom: 10%;
+  left: -100%;
+  transform: rotate(15deg) rotateY(180deg);
+  height: 17.5rem;
+  width: auto;
+  z-index: -1;
+  animation-name: slideInFromLeft;
+  animation-duration: 1.75s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+#beeCursorTracker {
+  position: fixed;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+  z-index: 9999;
+  height: 3rem;
+  width: auto;
+  top: -100%; /* Should not be visible until cursor gets moved */
 }/*# sourceMappingURL=style.css.map */
