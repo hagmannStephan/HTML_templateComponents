@@ -1,0 +1,79 @@
+@font-face {
+    font-family: SourGummy;
+    src: url(fonts/Sour_Gummy/static/SourGummy-SemiBold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        top: 110%;
+    }
+    100% {
+        top: 100%;
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: #fcf5f1;
+}
+
+#pageTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+
+    .block1 {
+        span {
+            font-family: 'SourGummy';
+            font-size: 5rem;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        /* Start fast -> end slow */
+        .letter1 { animation-delay: 0.3s; }
+        .letter2 { animation-delay: 0.325s; }   // 0.025s
+        .letter3 { animation-delay: 0.375s; }   // 0.05s
+        .letter4 { animation-delay: 0.45s; }    // 0.075s
+        .letter5 { animation-delay: 0.55s; }   // 0.1s
+        .letter6 { animation-delay: 0.65s; }    // 0.1s
+        .letter7 { animation-delay: 0.75s; }   // 0.1s
+        .letter8 { animation-delay: 0.85s; }    // 0.1s
+        .letter9 { animation-delay: 0.95s; }    // 0.1s
+
+    }
+
+    .block2 {
+        font-family: 'SourGummy';
+        font-size: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        span {
+            position: absolute;
+            top: 110%;
+            opacity: 0;
+            display: block;
+            animation-name: slideIn;
+            animation-duration: 0.75s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+    }
+}
