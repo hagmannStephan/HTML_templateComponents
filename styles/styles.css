@@ -1,0 +1,39 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+iframe {
+  display: block;
+  border: none;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+#beeCursorTracker {
+  position: fixed;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+  z-index: 9999;
+  height: 5rem;
+  width: auto;
+  top: -100%; /* Should not be visible until cursor gets moved */
+}
+
+#cursorTrail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.trail-point {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: #f9c728;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}/*# sourceMappingURL=styles.css.map */
